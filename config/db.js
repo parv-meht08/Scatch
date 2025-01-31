@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const config = require("config");
+require('dotenv').config(); // Ensure this is at the top if not already
 const dbgr = require("debug")("development:db");
 
-const dbURI = `${config.get("MONGODB_URI")}/scatch`;
+const dbURI = `${process.env.MONGODB_URI}/scatch`;
 
 const options = {
   serverSelectionTimeoutMS: 20000,
